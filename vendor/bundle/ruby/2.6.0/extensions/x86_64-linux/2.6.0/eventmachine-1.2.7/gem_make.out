@@ -1,0 +1,16 @@
+current directory: /home/moi/Projets/triboolet.github.io/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext/fastfilereader
+/usr/bin/ruby -I /usr/lib/ruby/2.6.0 -r ./siteconf20190724-16318-8fuv12.rb extconf.rb
+creating Makefile
+
+current directory: /home/moi/Projets/triboolet.github.io/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR=" clean
+
+current directory: /home/moi/Projets/triboolet.github.io/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR="
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.so
+
+current directory: /home/moi/Projets/triboolet.github.io/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 fastfilereaderext.so ./.gem.20190724-16318-udali3

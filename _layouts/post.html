@@ -1,0 +1,16 @@
+{% include header.html %}
+
+<section>
+	<div id="title">
+		<h1>{{ site.title | default: site.github.repository_name }}</h1>
+		<p>{{ site.description | default: site.github.project_tagline }}</p>
+		<hr>
+	</div>
+
+	<h2>{{ page.title }}</h2>
+	<p>{{ page.date | date_to_long_string }}</p>
+
+	{{ content }}
+</section>
+
+{% include footer.html %}
