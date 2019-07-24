@@ -5,8 +5,6 @@ date: 2018-11-25 18:15:56 +0100
 categories: jekyll update
 ---
 
-YOO
-
 Bonjour à tous hehe
 
 Ceci est un test : 
