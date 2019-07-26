@@ -1,76 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css">
-<title>François Philipps</title>
-<!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>François Philipps | François Philipps’s personal webpage, containing things I find interesting about machine learning, data science and whatnot</title>
-<meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="François Philipps" />
-<meta name="author" content="GitHub User" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="François Philipps’s personal webpage, containing things I find interesting about machine learning, data science and whatnot" />
-<meta property="og:description" content="François Philipps’s personal webpage, containing things I find interesting about machine learning, data science and whatnot" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
-<meta property="og:site_name" content="François Philipps" />
-<script type="application/ld+json">
-{"author":{"@type":"Person","name":"GitHub User"},"description":"François Philipps’s personal webpage, containing things I find interesting about machine learning, data science and whatnot","headline":"François Philipps","@type":"WebSite","name":"François Philipps","url":"http://localhost:4000/","@context":"http://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
+---
+layout : post
+title : 'Lorem ipsum'
+date : 2019-07-24 23:33:43+02:00
+---
 
-		<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-		<script>
-						MathJax.Hub.Config({
-								config: ["MMLorHTML.js"],
-								extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
-								jax: ["input/TeX"],
-								tex2jax: {
-										inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-										displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-										processEscapes: false
-								},
-								TeX: {
-										TagSide: "right",
-										TagIndent: ".8em",
-										MultLineWidth: "85%",
-										equationNumbers: {
-											 autoNumber: "AMS",
-										},
-										unicode: {
-											 fonts: "STIXGeneral,'Arial Unicode MS'"
-										}
-								},
-								showProcessingMessages: false
-						});
-		</script>
-</head>
-<body>
-	<main class="container">
-		<section class="about">
-			<img src="/assets/profil.png" alt="François Philipps">
-			<h2>François Philipps</h2>
-			<p class="tagline">Moa</p>
-			<ul class="social">
-				<a href="https://github.com/triboolet"><li><i class="icon-github-circled"></i></li></a>
-				<a href="https://www.linkedin.com/in/francois-philipps"><li><i class="icon-linkedin-squared"></i></li></a>
-			<p>&copy; 2019</p>
-		</section>
-		<section class="content">
-			
-<ul class="posts"><li>
-		<h1 id="posts-label">posts</h1>
-	</li>
-	<li><a class="post-link" href="/2019/07/24/Lorem-ipsum.html">
-			<h2 class="post-title">Lorem ipsum</h2>
-		</a>
-		<div class="post-meta">
-			<ul class="post-categories"></ul>
-			<div class="post-date"><i class="icon-calendar"></i>Jul 24, 2019</div>
-		</div>
-		<div class="post"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -163,39 +96,5 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</div>
-	</li><li>
-		<h1 id="posts-label">posts</h1>
-	</li>
-	<li><a class="post-link" href="/jekyll/update/2018/11/25/Saranghea-egi.html">
-			<h2 class="post-title">La Backpropagation</h2>
-		</a>
-		<div class="post-meta">
-			<ul class="post-categories"><li>jekyll</li><li>update</li></ul>
-			<div class="post-date"><i class="icon-calendar"></i>Nov 25, 2018</div>
-		</div>
-		<div class="post"><p>Bonjour à tous hehe</p>
-
-</div>
-	</li><li>
-		<h1 id="posts-label">posts</h1>
-	</li>
-	<li><a class="post-link" href="/jekyll/update/2018/11/25/welcome-to-jekyll.html">
-			<h2 class="post-title">First test</h2>
-		</a>
-		<div class="post-meta">
-			<ul class="post-categories"><li>jekyll</li><li>update</li></ul>
-			<div class="post-date"><i class="icon-calendar"></i>Nov 25, 2018</div>
-		</div>
-		<div class="post"><p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
-
-</div>
-	</li></ul>
-
- <!-- <p class="feed-subscribe"><svg class="svg-icon orange">
-		<use xlink:href="/assets/minima-social-icons.svg#rss"></use>
-	</svg><a href="/feed.xml">Subscribe</a></p> -->
-		</section>
-	</main></body>
-</html>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
