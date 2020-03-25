@@ -12,14 +12,14 @@ sass:
   sass_dir: _sass
 plainwhite:
   name: François Philipps
-  tagline: Moa
+  tagline: 
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml content
 
   # generate social links in footer
   social_links:
     github:  triboolet
-    linkedIn: in/francois-philipps
+    linkedIn: in/françois-philipps
     rss: rss
     # dribbble: jekyll
     # facebook: jekyll
