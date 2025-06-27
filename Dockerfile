@@ -8,7 +8,7 @@ COPY . .
 
 RUN mkdir sites
 RUN mkdir pages
-RUN gcc main.c -o generate
+RUN gcc site_generator.c -o generate
 
 
 
