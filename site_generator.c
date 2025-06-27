@@ -9,6 +9,20 @@
 // for the 0755 const
 #include <sys/types.h>
 
+char *slice(const char *start, const char *end) {
+  if (!start || !end || end < start)
+    return NULL;
+
+  size_t len = end - start;
+  char *result = malloc(len + 1);
+  if (!result)
+    return NULL;
+
+  strncpy(result, start, len);
+  result[len] = '\0';
+  return result;
+}
+
 int is_markdown_file(const char *fileName) {
   const char *dot = strrchr(fileName, '.');
   return dot && strcmp(dot, ".md") == 0;
@@ -19,7 +33,8 @@ void pandoc_md_to_html(const char *md_path, const char *html_path) {
   // at html_path
   char command[1024];
   snprintf(command, sizeof(command),
-           "pandoc \"%s\" -f markdown -t html -o \"%s\"", md_path, html_path);
+           "pandoc \"%s\" -f markdown -t html -o \"%s\" --css=static/theme.css",
+           md_path, html_path);
   printf("Running %s\n", command);
   int ret = system(command);
   if (ret != 0) {
@@ -39,8 +54,12 @@ void write_index(const char **html_files, int count) {
                  "Site</title></head>\n<body>\n<h1>My Blog</h1>\n<ul>\n");
 
   for (int i = 0; i < count; i++) {
-    fprintf(index, "<li><a href=\"%s\">%s</a></li>\n", html_files[i],
-            html_files[i]);
+    const char *pagePath = html_files[i];
+    char *dot = strrchr(pagePath, '.');
+    char *lastSlash = strrchr(pagePath, '/');
+    char *name = slice(lastSlash + 1, dot);
+
+    fprintf(index, "<li><a href=\"%s\">%s</a></li>\n", html_files[i], name);
   }
 
   fprintf(index, "</ul>\n</body>\n</html>\n");
@@ -51,10 +70,10 @@ int main() {
   const int MAX_FILES = 1000;
   char md_dir[256];
   char html_dir[256];
-  snprintf(md_dir, sizeof(md_dir), "static");
+  snprintf(md_dir, sizeof(md_dir), "static/articles");
   snprintf(html_dir, sizeof(html_dir), "site/pages");
 
-  DIR *dir = opendir("static");
+  DIR *dir = opendir(md_dir);
   // if the directory does not exist
   if (ENOENT == errno) {
     mkdir("site", 0755);
@@ -86,8 +105,12 @@ int main() {
       pandoc_md_to_html(md_path, html_path);
 
       // add the path to the list of generated html files for the index
+      // we need to trim the "site" part of the string, as index.html lives in
+      // "site"
+      char *sitePrefix = strchr(html_path, '/');
+      char *htmlPathNoPrefix = sitePrefix + 1;
       char pathToHTML[256];
-      snprintf(pathToHTML, sizeof(pathToHTML), "%s", html_path);
+      snprintf(pathToHTML, sizeof(pathToHTML), "%s", htmlPathNoPrefix);
       html_files[numberOfGeneratedFiles++] = strdup(pathToHTML);
     }
   }
