@@ -6,9 +6,5 @@ WORKDIR /workdir
 
 COPY . .
 
-RUN mkdir sites
-RUN mkdir pages
-RUN gcc site_generator.c -o generate
-
-
-
+RUN make release
+RUN make site

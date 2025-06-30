@@ -9,6 +9,8 @@
 // for the 0755 const
 #include <sys/types.h>
 
+#include "fix_css_path.h"
+
 char *slice(const char *start, const char *end) {
   if (!start || !end || end < start)
     return NULL;
@@ -33,7 +35,7 @@ void pandoc_md_to_html(const char *md_path, const char *html_path) {
   // at html_path
   char command[1024];
   snprintf(command, sizeof(command),
-           "pandoc \"%s\" -f markdown -t html -o \"%s\" --css=static/theme.css",
+           "pandoc \"%s\" -f markdown -t html -o \"%s\" -s --css=../theme.css",
            md_path, html_path);
   printf("Running %s\n", command);
   int ret = system(command);
@@ -70,8 +72,8 @@ int main() {
   const int MAX_FILES = 1000;
   char md_dir[256];
   char html_dir[256];
-  snprintf(md_dir, sizeof(md_dir), "static/articles");
-  snprintf(html_dir, sizeof(html_dir), "site/pages");
+  snprintf(md_dir, sizeof(md_dir), "content/posts");
+  snprintf(html_dir, sizeof(html_dir), "site/posts");
 
   DIR *dir = opendir(md_dir);
   // if the directory does not exist
@@ -104,9 +106,12 @@ int main() {
       snprintf(html_path, sizeof(html_path), "%s/%s.html", html_dir, base);
       pandoc_md_to_html(md_path, html_path);
 
+      // we fix the relative path to the CSS file in the generated pages
+      fixCSSRelativePath(html_path, "../theme.css", "../static/theme.css");
+
       // add the path to the list of generated html files for the index
-      // we need to trim the "site" part of the string, as index.html lives in
-      // "site"
+      // we need to trim the "site" part of the string, as index.html lives
+      // in "site"
       char *sitePrefix = strchr(html_path, '/');
       char *htmlPathNoPrefix = sitePrefix + 1;
       char pathToHTML[256];
