@@ -2,4 +2,5 @@ site
 *.o
 bin
 build
+.jukit
 
