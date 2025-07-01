@@ -35,7 +35,8 @@ void pandoc_md_to_html(const char *md_path, const char *html_path) {
   // at html_path
   char command[1024];
   snprintf(command, sizeof(command),
-           "pandoc \"%s\" -f markdown -t html -o \"%s\" -s --css=../theme.css",
+           "pandoc \"%s\" -f markdown -t html -o \"%s\" -s --css=../theme.css "
+           "--template=pandoc/post_html_template.html",
            md_path, html_path);
   int ret = system(command);
   if (ret != 0) {
