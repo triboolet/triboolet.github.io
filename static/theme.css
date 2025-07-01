@@ -1,26 +1,75 @@
 body {
-    background-color: #282828;
-    color: #ebdbb2;
-    font-family: 'Fira Sans', sans-serif;
-    line-height: 1.6;
-    padding: 2em;
-    max-width: 800px;
-    margin: auto;
-}
-a {
-    color: #83a598;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-code, pre {
-    background-color: #3c3836;
-    color: #fabd2f;
-    padding: 0.2em 0.4em;
-    border-radius: 4px;
-}
-h1, h2, h3 {
-    color: #fbf1c7;
+  font-family: 'Georgia', serif;
+  background-color: #f7f7f7;
+  color: #222;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+
+  /* More pronounced parchment-style texture */
+  background-image:
+    url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABUUlEQVR4nO2ZsQmEMAxF5/n/udYRGNgYkFZx38pq+yRBS4nBeM7D3eCD1d8fsdF0KjAK/BeGq+oBdgtgkk9WdzT8fEUOpmkE1EyTQkUuKQhpl9ghpkqkVNlb5Gj0qaUXQCMQZiQzBWhkglGMrGuT2a7Aw2Bz0HZx9z3AbW0F2BRRFM0cMgE2I/omrnlQaQDUOxQ0EoBLK8AYjPzmMOiYAaiAeOBAA00KvwbYMQAKQCjJQwUzSVIbiwU0WekY4F0w1xL3A7hzjMyT7A94hieLw9b3Sw3c+/mFMPMczTbz+bMEpmZn3yrX18Xq53uCD9KiwAAAABJRU5ErkJggg=='),
+    radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    radial-gradient(circle, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 100px 100px, 40px 40px, 20px 20px;
+  background-blend-mode: multiply;
 }
 
+header {
+  background-color: #fff;
+  padding: 2em 1em;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: normal;
+  margin: 0;
+}
+
+main {
+  max-width: 720px;
+  margin: 3em auto;
+  padding: 0 1em;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-top: 2em;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.2em;
+}
+
+p {
+  margin: 1em 0;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin: 0.5em 0;
+}
+
+a {
+  color: #800000;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+a:hover {
+  border-color: #800000;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9em;
+  color: #666;
+  padding: 2em 1em;
+  border-top: 1px solid #ccc;
+  margin-top: 4em;
+}

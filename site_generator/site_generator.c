@@ -37,7 +37,6 @@ void pandoc_md_to_html(const char *md_path, const char *html_path) {
   snprintf(command, sizeof(command),
            "pandoc \"%s\" -f markdown -t html -o \"%s\" -s --css=../theme.css",
            md_path, html_path);
-  printf("Running %s\n", command);
   int ret = system(command);
   if (ret != 0) {
     perror("pandoc command failed");
@@ -52,8 +51,20 @@ void write_index(const char **html_files, int count) {
     exit(EXIT_FAILURE);
   }
 
-  fprintf(index, "<!DOCTYPE html>\n<html>\n<head><title>My "
-                 "Site</title></head>\n<body>\n<h1>My Blog</h1>\n<ul>\n");
+  fprintf(index, "<!DOCTYPE html>\n"
+                 "<html>\n"
+                 "<head>\n"
+                 "\t<meta charset=\"UTF-8\">\n"
+                 "\t<title>Under Construction</title>\n"
+                 "\t<link rel=\"stylesheet\" href=\"static/theme.css\">\n"
+                 "</head>\n"
+                 "<body>\n"
+                 "\t<header>\n"
+                 "\t\t<h1>Site en construction</h1>\n"
+                 "\t</header>\n"
+                 "\t<main>\n"
+                 "\t\t<h2>Posts</h2>"
+                 "\t\t<ul>\n");
 
   for (int i = 0; i < count; i++) {
     const char *pagePath = html_files[i];
@@ -61,10 +72,17 @@ void write_index(const char **html_files, int count) {
     char *lastSlash = strrchr(pagePath, '/');
     char *name = slice(lastSlash + 1, dot);
 
-    fprintf(index, "<li><a href=\"%s\">%s</a></li>\n", html_files[i], name);
+    fprintf(index, "\t\t\t<li><a href=\"%s\">%s</a></li>\n", html_files[i],
+            name);
   }
 
-  fprintf(index, "</ul>\n</body>\n</html>\n");
+  fprintf(index, "\t\t</ul>\n"
+                 "\t</main>\n");
+  fprintf(index, "\t<footer>\n"
+                 "\t\t &copy; 2025 me\n"
+                 "\t</footer>\n");
+  fprintf(index, "</body>\n"
+                 "</html>\n");
   fclose(index);
 }
 
@@ -91,7 +109,6 @@ int main() {
 
   while ((entry = readdir(dir)) != NULL) {
     if (entry->d_type == DT_REG && is_markdown_file(entry->d_name)) {
-      printf("File : %s\n", entry->d_name);
       char md_path[1024];
       char html_path[1024];
       snprintf(md_path, sizeof(md_path), "%s/%s", md_dir, entry->d_name);
@@ -118,9 +135,6 @@ int main() {
       snprintf(pathToHTML, sizeof(pathToHTML), "%s", htmlPathNoPrefix);
       html_files[numberOfGeneratedFiles++] = strdup(pathToHTML);
     }
-  }
-  for (int i = 0; i < numberOfGeneratedFiles; i++) {
-    printf("%s\n", html_files[i]);
   }
 
   write_index(html_files, numberOfGeneratedFiles);
