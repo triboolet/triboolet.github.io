@@ -29,10 +29,10 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJDIR) $(BINDIR) site/
+	rm -rf $(OBJDIR) $(BINDIR) site
 
 site: all
 	mkdir -p site
 	mkdir -p site/posts
-	cp -r static site
+	cp -nr static site
 	./$(TARGET)
