@@ -88,11 +88,3 @@ int fixCSSRelativePath(char *htmlFilePath, char *wrongCSSFilePath,
   fclose(file);
   return 0;
 }
-
-/*
-int main() {
-  fixCSSRelativePath("site/posts/page1.html", "../theme.css",
-                     "../static/theme.css");
-  return EXIT_SUCCESS;
-}
-*/
