@@ -1,7 +1,6 @@
 FROM alpine:latest as build
 
-RUN echo "connections = 20" >> /etc/apk/apk.conf && \
-    apk --no-cache add --no-cache build-base pandoc
+RUN apk add --no-cache build-base pandoc
 
 RUN addgroup -S builder && \
     adduser -D -G builder -s /bin/sh builder && \
