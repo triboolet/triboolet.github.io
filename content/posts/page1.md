@@ -18,3 +18,13 @@ sub chapter 2
 ### Sub sub chapter
 
 sub chapter 2
+
+```python
+print("hello world")
+sys.exit(1)
+
+def func(a):
+    return a + 2
+```
+
+

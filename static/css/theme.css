@@ -80,3 +80,25 @@ img {
   display: block;
   margin: 1rem auto;
 }
+
+
+pre, pre code {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1em;
+  padding: 0.5em;
+  border-radius: 6px;
+  overflow-x: auto;
+
+  max-width: 90vw;  /* max width relative to viewport */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  pre, pre code {
+    font-size: 0.85em;
+  }
+}
