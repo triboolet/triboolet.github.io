@@ -9,8 +9,6 @@
 // for the 0755 const
 #include <sys/types.h>
 
-#include "fix_css_path.h"
-
 char *slice(const char *start, const char *end) {
   if (!start || !end || end < start)
     return NULL;
@@ -123,9 +121,6 @@ int main() {
 
       snprintf(html_path, sizeof(html_path), "%s/%s.html", html_dir, base);
       pandoc_md_to_html(md_path, html_path);
-
-      // we fix the relative path to the CSS file in the generated pages
-      fixCSSRelativePath(html_path, "../theme.css", "../static/theme.css");
 
       // add the path to the list of generated html files for the index
       // we need to trim the "site" part of the string, as index.html lives
