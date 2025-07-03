@@ -68,9 +68,10 @@ void write_index(const char **html_files, int count) {
 
   for (int i = 0; i < count; i++) {
     const char *pagePath = html_files[i];
-    char *dot = strrchr(pagePath, '.');
+    char *firstSlash = strchr(pagePath, '/');
     char *lastSlash = strrchr(pagePath, '/');
-    char *name = slice(lastSlash + 1, dot);
+    char *name = slice(firstSlash + 1, lastSlash);
+    printf("%s %s %s", firstSlash, lastSlash, name);
 
     fprintf(index, "\t\t\t<li><a href=\"%s\">%s</a></li>\n", html_files[i],
             name);
@@ -110,6 +111,7 @@ int main() {
   while ((entry = readdir(dir)) != NULL) {
     if (entry->d_type == DT_REG && is_markdown_file(entry->d_name)) {
       char md_path[1024];
+      char html_folder[1024];
       char html_path[1024];
       snprintf(md_path, sizeof(md_path), "%s/%s", md_dir, entry->d_name);
 
@@ -120,7 +122,13 @@ int main() {
       strncpy(base, entry->d_name, basename_len);
       base[basename_len] = '\0';
 
-      snprintf(html_path, sizeof(html_path), "%s/%s.html", html_dir, base);
+      snprintf(html_folder, sizeof(html_folder), "%s/%s", html_dir, base);
+      if (mkdir(html_folder, 0755) != 0) {
+        if (errno != EEXIST) {
+          perror("Couldn't create folder");
+        }
+      }
+      snprintf(html_path, sizeof(html_path), "%s/index.html", html_folder);
       pandoc_md_to_html(md_path, html_path);
 
       // add the path to the list of generated html files for the index
