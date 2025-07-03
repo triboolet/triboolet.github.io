@@ -36,5 +36,4 @@ site: all
 	mkdir -p site/posts
 	mkdir -p site/static
 	cp -nr static/css site/static/css
-	cp -nr static/images site/static/images
 	./$(TARGET)
