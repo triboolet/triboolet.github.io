@@ -34,5 +34,7 @@ clean:
 site: all
 	mkdir -p site
 	mkdir -p site/posts
-	cp -nr static site
+	mkdir -p site/static
+	cp -nr static/css site/static/css
+	cp -nr static/images site/static/images
 	./$(TARGET)

@@ -33,7 +33,7 @@ void pandoc_md_to_html(const char *md_path, const char *html_path) {
   // at html_path
   char command[1024];
   snprintf(command, sizeof(command),
-           "pandoc \"%s\" -f markdown -t html -o \"%s\" -s --css=../theme.css "
+           "pandoc \"%s\" -f markdown -t html -o \"%s\" -s "
            "--template=pandoc/post_html_template.html",
            md_path, html_path);
   int ret = system(command);
@@ -55,7 +55,7 @@ void write_index(const char **html_files, int count) {
                  "<head>\n"
                  "\t<meta charset=\"UTF-8\">\n"
                  "\t<title>Under Construction</title>\n"
-                 "\t<link rel=\"stylesheet\" href=\"static/theme.css\">\n"
+                 "\t<link rel=\"stylesheet\" href=\"static/css/theme.css\">\n"
                  "</head>\n"
                  "<body>\n"
                  "\t<header>\n"

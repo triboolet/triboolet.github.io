@@ -73,3 +73,10 @@ footer {
   border-top: 1px solid #ccc;
   margin-top: 4em;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
